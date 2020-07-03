@@ -16,9 +16,10 @@ class CreateJawabanTable extends Migration
         Schema::create('jawaban', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('isi');
-            $table->string('tanggal-buat');
-            $table->string('tanggal-perbaharui');
+            $table->unsignedBigInteger('pertanyaan_id');
             $table->timestamps();
+
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
         });
     }
 
