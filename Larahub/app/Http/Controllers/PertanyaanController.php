@@ -26,4 +26,25 @@ class PertanyaanController extends Controller
             return redirect('/pertanyaan');
         }
     }
+
+    public function show($id){
+       $pertanyaan = PertanyaanModel::find_by_id($id);
+       return view('pertanyaan.show', compact('pertanyaan'));
+    }
+
+    public function edit($id) {
+        $pertanyaan = PertanyaanModel::find_by_id($id);
+        return view('pertanyaan.edit', compact('pertanyaan'));
+    }
+
+    public function update($id, Request $request) {
+        $pertanyaan = PertanyaanModel::update($id, $request->all());
+        return redirect('/pertanyaan');
+    }
+
+    public function destroy($id) {
+        $deleted = PertanyaanModel::destroy($id);
+
+        return redirect('/pertanyaan');
+    } 
 }

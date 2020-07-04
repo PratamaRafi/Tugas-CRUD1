@@ -13,4 +13,6 @@ class JawabanModel{
         $new_jawaban = DB::table('jawaban')->insert($jawab);
         return $new_jawaban;
     }
+
+    
 }

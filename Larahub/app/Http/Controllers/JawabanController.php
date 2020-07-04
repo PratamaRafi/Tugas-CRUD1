@@ -9,7 +9,7 @@ class JawabanController extends Controller
 {
     public function index() {
         $jawaban = JawabanModel::get_all();
-            return view('jawaban.form', compact('jawaban'));
+            return view('jawaban.hasil', compact('jawaban'));
     }
 
     public function store(Request $request) {
@@ -19,9 +19,7 @@ class JawabanController extends Controller
         // dd($tanya);
         // dd($data);
         if($hasil){
-            return redirect('/jawaban');
+            return redirect('/jawaban/hasil');
         }
     }
 }
-// UBAH VARIABEL PADA FILE INI JAN LUPA LU!!!
-// GUE MAU PERGI DULU BENTAR

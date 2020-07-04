@@ -17,7 +17,8 @@ class CreateJawabanTable extends Migration
             $table->bigIncrements('id');
             $table->string('isi');
             $table->unsignedBigInteger('pertanyaan_id');
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
 
             $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan');
         });
