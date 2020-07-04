@@ -9,8 +9,9 @@ class JawabanModel{
         return $jawaban;
     }
 
-    public static function find_by_id($id){
-        $jawaban = DB::table('jawaban')->where('pertanyaan_id', $id)->first();
+    public static function find_by_pertanyaan_id($pertanyaan_id){
+        $jawaban = DB::table('jawaban')->where('pertanyaan_id', $pertanyaan_id)->get();
+        // dd($jawaban);
         return $jawaban;
     }
 
