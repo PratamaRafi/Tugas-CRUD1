@@ -25,7 +25,7 @@ Route::get('/pertanyaan/{id}', 'PertanyaanController@edit');//form untuk edit
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
 
 Route::post('/pertanyaan', 'PertanyaanController@store');//mengirimkan pertanyaan baru masuk ke database
-Route::post('/jawaban', 'JawabanController@store');
+Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
 
 Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
 Route::delete('pertanyaan/{id}', 'PertanyaanController@destroy'); //hapus pertanyaan id tertentu 

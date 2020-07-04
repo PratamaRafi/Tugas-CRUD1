@@ -19,6 +19,7 @@
         <td> {{ $pertanyaan->judul }} </td>
         <td> {{ $pertanyaan->isi }} </td>
         <td>
+        <a href="/jawaban/{{$pertanyaan->id}}" class="btn btn-sm btn-info">Bantu Jawab</a>
           <a href="/pertanyaan/{{$pertanyaan->id}}" class="btn btn-sm btn-info">Detail</a>
           <form action="/pertanyaan/{{$pertanyaan->id}}" method="POST" style="display: inline;">
             @csrf

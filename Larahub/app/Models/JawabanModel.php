@@ -9,7 +9,13 @@ class JawabanModel{
         return $jawaban;
     }
 
-    public static function save($jawab) {
+    public static function find_by_id($id){
+        $jawaban = DB::table('jawaban')->where('pertanyaan_id', $id)->first();
+        return $jawaban;
+    }
+
+    public static function save($id, $jawab) {
+        $jawab['pertanyaan_id'] = $id;
         $new_jawaban = DB::table('jawaban')->insert($jawab);
         return $new_jawaban;
     }

@@ -2,11 +2,9 @@
 
 @section('content')
 <div class="ml-3">
-    <form action="#" method="POST">
+    <form action="/jawaban/hasil" method="POST">
      @csrf
-      <div>
-       <h3>Pertanyaan : {{ $pertanyaan->isi }} </h3>
-      </div>
+     
       <div class="form-group">
         <label for="isi">Silahkan bantu jawab disini :</label>
         <input type="text" class="form-control" placeholder="Silahkan Isi Jawaban" name="isi" id="isi">
