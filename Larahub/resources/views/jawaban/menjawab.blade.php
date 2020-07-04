@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="ml-3">
-    <form action="/jawaban/hasil" method="POST">
+    <form action="/pertanyaan" method="POST">
      @csrf
      
       <div class="form-group">

@@ -14,8 +14,7 @@ class JawabanModel{
         return $jawaban;
     }
 
-    public static function save($id, $jawab) {
-        $jawab['pertanyaan_id'] = $id;
+    public static function save($jawab) {
         $new_jawaban = DB::table('jawaban')->insert($jawab);
         return $new_jawaban;
     }

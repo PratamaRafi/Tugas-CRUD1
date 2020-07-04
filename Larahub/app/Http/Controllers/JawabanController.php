@@ -13,13 +13,12 @@ class JawabanController extends Controller
             return view('jawaban.menjawab', compact('jawaban'));
     }
 
-    public function store($id, Request $request) {
+    public function store($pertanyaan_id, Request $request) {
         $jawab = $request->all();
+        // dd($jawab);
         unset($jawab["_token"]);
-        $hasil = JawabanModel::save($id, $jawab);
-        dd($hasil);
-        if($hasil){
-            return redirect('/jawaban/hasil');
-        }
+        JawabanModel::save($jawab);
+        
+
     }
 }

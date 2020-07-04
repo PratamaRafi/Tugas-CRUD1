@@ -5,8 +5,8 @@
     <thead>
       <tr>
         <th>No</th>
-        <th>Judul</th>
-        <th>Isi</th>
+        <th>Kategori</th>
+        <th>Pertanyaan</th>
         <th>Action</th>
         <th>Tanggal Dibuat</th>
         <th>Tanggal Diperbaharui</th>
@@ -19,7 +19,12 @@
         <td> {{ $pertanyaan->judul }} </td>
         <td> {{ $pertanyaan->isi }} </td>
         <td>
-        <a href="/jawaban/{{$pertanyaan->id}}" class="btn btn-sm btn-info">Bantu Jawab</a>
+        <form action="/jawaban/{{$pertanyaan->id}}" method="post">
+          @csrf
+          <input type="text" name="isi">
+          <input hidden name="pertanyaan_id" value="{{ $pertanyaan->id }}">
+          <button type="submit" class="btn btn-sm btn-warning mb-1">Bantu Jawab</button>
+        </form>
           <a href="/pertanyaan/{{$pertanyaan->id}}" class="btn btn-sm btn-info">Detail</a>
           <form action="/pertanyaan/{{$pertanyaan->id}}" method="POST" style="display: inline;">
             @csrf
